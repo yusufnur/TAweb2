@@ -10,8 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
+    return view('awal');
+});
+
+Route::get('/lara', function () {
     return view('welcome');
 });
 
@@ -27,11 +30,11 @@ Route::post('percakapan/kirim', function () {
     return view('percakapan_kirim');
 });
 
-Route::get('template', function () {   
+Route::get('template', function () {
 	return view('coba1');
 });
 
-Route::get('coba1', function () { 
+Route::get('coba1', function () {
 	return view('coba1');
 });
 
@@ -70,4 +73,3 @@ Route::prefix('admin')->group(function() {
 Route::get('upload',['as'=>'upload.index','uses'=>'UploadController@index']);
 Route::get('upload/create',['as'=>'upload.create','uses'=>'UploadController@create']);
 Route::post('upload',['as'=>'upload.store','uses'=>'UploadController@store']);
-
