@@ -3,9 +3,8 @@
 <title>EVENT SEKOLAH</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ asset('assets/css/w3.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -24,20 +23,20 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url ('http://120.0.0.1:8000/aset/assets/konser1.jpg');
+    background-image: url("assets/konser1.jpg");
     min-height: 100%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
 	opacity: 0.5;
-    background-image: url("konser2.jpg");
+    background-image: url("assets/konser2.jpg");
     min-height: 400px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-    background-image: url("konser3.jpg");
+    background-image: url("assets/konser3.jpg");
     min-height: 400px;
 }
 
@@ -82,7 +81,7 @@ body, html {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min w3-black"><!--w3-black sementara karena gambar belum bisa-->
+<div class="bgimg-1 w3-display-container w3-opacity-min">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">LOGO <span class="w3-hide-small">EVENT</span></span>
   </div>
@@ -100,7 +99,7 @@ body, html {
 </div>
 
 <!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min w3-black"><!--w3-black sementara karena gambar belum bisa-->
+<div class="bgimg-2 w3-display-container w3-opacity-min w3-black">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide">PHOTOS</span>
   </div>
@@ -146,7 +145,7 @@ body, html {
     <div class="w3-col m3">
       <img src="contoh4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
-    <a href="/gallery" class="w3-button w3-light-greyw3-button w3-padding-large w3-light-grey" style="margin-top:64px">MORE PHOTOS IN GALLERY</a>
+    <a href="/gallery" class="w3-button w3-light-grey w3-button w3-padding-large w3-light-grey w3-opacity" style="margin-top:64px">MORE PHOTOS IN GALLERY</a>
   </div>
 </div>
 
@@ -160,7 +159,7 @@ body, html {
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min w3-black"><!--w3-black sementara karena gambar belum bisa-->
+<div class="bgimg-3 w3-display-container w3-opacity-min w3-black">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">PARTNER</span>
   </div>
@@ -252,15 +251,7 @@ body, html {
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-32 w3-opacity w3-hover-opacity-off">
   <a href="/" class="w3-button w3-light-grey">HOME</a>
-  <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Copyright © 2017</p>
 </footer>
 
 <!-- Add Google Maps -->
