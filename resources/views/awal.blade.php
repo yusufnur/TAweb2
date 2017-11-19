@@ -1,64 +1,6 @@
-<!DOCTYPE html>
-<html>
-<title>EVENT SEKOLAH</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ asset('assets/css/w3.css') }}">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    color: #777;
-    line-height: 1.8;
-}
+@extends('layouts.layoutawal')
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-    background-image: url("assets/konser1.jpg");
-    min-height: 100%;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-	opacity: 0.5;
-    background-image: url("assets/konser2.jpg");
-    min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-    background-image: url("assets/konser3.jpg");
-    min-height: 400px;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: scroll;
-    }
-}
-
-
-.active {
-    background-color: #ccc;
-}
-
-</style>
-<body>
-
+@section('content')
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
@@ -66,18 +8,23 @@ body, html {
       <i class="fa fa-bars"></i>
     </a>
     <a href="/" class="w3-bar-item w3-button active">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small">ABOUT</a>
-    <a href="#gallery" class="w3-bar-item w3-button w3-hide-small">GALLERY</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right ">LOGIN</a>
+    <a href="/about" class="w3-bar-item w3-button w3-hide-small">ABOUT</a>
+    <a href="/gallery" class="w3-bar-item w3-button w3-hide-small">GALLERY</a>
+    <a href="{{ route('login') }}" class="w3-bar-item w3-button w3-hide-small">REGISTER EVENT</a>
+    <a href="{{ route('login') }}" class="w3-bar-item w3-button w3-hide-small">E-TICKET</a>
+    <a href="/contact" class="w3-bar-item w3-button w3-hide-small">CONTACT</a>
+    <a href="{{ route('login') }}" class="w3-bar-item w3-button w3-hide-small w3-right ">LOGIN</a>
+
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
     <a href="#gallery" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERY</a>
+    <a href="{{ route('login') }}" class="w3-bar-item w3-button" onclick="toggleFunction()">REGISTER EVENT</a>
+    <a href="{{ route('login') }}" class="w3-bar-item w3-button" onclick="toggleFunction()">E-TICKET</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button"></a>
+    <a href="{{ route('login') }}" class="w3-bar-item w3-button">LOGIN</a>
   </div>
 </div>
 
@@ -108,7 +55,7 @@ body, html {
 
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64">
-  <h3 class="w3-center">MY WORK</h3>
+  <h3 class="w3-center">GALLERY FOTO</h3>
   <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
@@ -132,19 +79,19 @@ body, html {
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <img src="contoh1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+      <img src="{{ asset('assets/contoh1.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+      <img src="{{ asset('assets/contoh2.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+      <img src="{{ asset('assets/contoh3.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      <img src="{{ asset('assets/contoh4.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
     <a href="/gallery" class="w3-button w3-light-grey w3-button w3-padding-large w3-light-grey w3-opacity" style="margin-top:64px">MORE PHOTOS IN GALLERY</a>
   </div>
@@ -173,37 +120,37 @@ body, html {
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket1.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      <img src="{{ asset('assets/tiket1.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket2.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <img src="{{ asset('assets/tiket2.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket3.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Mencari jodoh">
+      <img src="{{ asset('assets/tiket3.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket5.png') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <img src="{{ asset('assets/tiket5.png') }}" style="width:100%" >
     </div>
   </div>
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <img src="contoh1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+      <img src="{{ asset('assets/contoh1.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+      <img src="{{ asset('assets/contoh2.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+      <img src="{{ asset('assets/contoh3.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      <img src="{{ asset('assets/contoh4.jpg') }}" style="width:100%" >
     </div>
   </div>
 </div>
@@ -214,37 +161,37 @@ body, html {
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket1.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      <img src="{{ asset('assets/tiket1.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket2.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <img src="{{ asset('assets/tiket2.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket3.jpg') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Mencari jodoh">
+      <img src="{{ asset('assets/tiket3.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="{{ asset('assets/tiket5.png') }}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <img src="{{ asset('assets/tiket5.png') }}" style="width:100%" >
     </div>
   </div>
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <img src="contoh1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+      <img src="{{ asset('assets/contoh1.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+      <img src="{{ asset('assets/contoh2.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+      <img src="{{ asset('assets/contoh3.jpg') }}" style="width:100%" >
     </div>
 
     <div class="w3-col m3">
-      <img src="contoh4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      <img src="{{ asset('assets/contoh4.jpg') }}" style="width:100%" >
     </div>
   </div>
 </div>
@@ -262,59 +209,4 @@ body, html {
   </div>
   <p>Copyright © 2017</p>
 </footer>
-
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
-</body>
-</html>
+@endsection

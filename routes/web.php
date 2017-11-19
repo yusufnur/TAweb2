@@ -14,6 +14,18 @@ Route::get('/', function () {
     return view('awal');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/lara', function () {
     return view('welcome');
 });
