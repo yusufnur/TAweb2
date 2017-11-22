@@ -19,11 +19,11 @@
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#gallery" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERY</a>
+    <a href="/about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="/gallery" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERY</a>
     <a href="{{ route('login') }}" class="w3-bar-item w3-button" onclick="toggleFunction()">REGISTER EVENT</a>
     <a href="{{ route('login') }}" class="w3-bar-item w3-button" onclick="toggleFunction()">E-TICKET</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="/contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
     <a href="{{ route('login') }}" class="w3-bar-item w3-button">LOGIN</a>
   </div>
 </div>
